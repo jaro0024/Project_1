@@ -38,7 +38,7 @@ function initMap() {
 
     }
 
-    // Listener Functtion to display near skydiving locations when user cick on city
+    // Listener Function to display near skydiving locations when user cick on city
     google.maps.event.addListener(marker, 'click', (function () {
         // Zoom map to city
         map.setZoom(12);
