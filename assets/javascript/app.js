@@ -97,7 +97,7 @@ $(document)
     });
 
 
-/// This is our API key
+/// This is our Weather API key
 var APIKey = "999df4c3925000e8f0fcd5765a05caf2";
 
 // Here we are building the URL we need to query the database
@@ -134,6 +134,26 @@ $.ajax({
         console.log("Max: " + response.main.temp_max + "\xB0");
         console.log("Min: " + response.main.temp_min + "\xB0");
     });
+
+
+// // Initialize Firebase
+// var config = {
+//     apiKey: "AIzaSyAyfCr9dIcDit6gZ3awQ5XPsXx2gPYCzYo",
+//     authDomain: "project1-firebase-2e02f.firebaseapp.com",
+//     databaseURL: "https://project1-firebase-2e02f.firebaseio.com",
+//     projectId: "project1-firebase-2e02f",
+//     storageBucket: "",
+//     messagingSenderId: "976403721936"
+// };
+// firebase.initializeApp(config);
+
+// // Create a variable to reference the database
+// var database = firebase.database();
+
+
+
+
+
 
 // var locations = [
 //     ['Dubai', 24.926976, 55.164529, 5],
