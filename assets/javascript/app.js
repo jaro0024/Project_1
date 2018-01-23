@@ -88,15 +88,51 @@ function initMap() {
                 });
             }));
         })(i);
-
     }
-
-
 }
 
 $(document)
     .ready(function () {
         initMap();
+    });
+
+
+/// This is our API key
+var APIKey = "999df4c3925000e8f0fcd5765a05caf2";
+
+// Here we are building the URL we need to query the database
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=24.926976&lon=55.164529&units=imperial&appid=" + APIKey;
+
+// Here we run our AJAX call to the OpenWeatherMap API
+$.ajax({
+    url: queryURL,
+    method: "GET"
+})
+    // We store all of the retrieved data inside of an object called "response"
+    .done(function (response) {
+
+        // Log the queryURL
+        console.log(queryURL);
+
+        // Log the resulting object
+        console.log(response);
+
+        // Transfer content to HTML
+        $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+        $(".temp").text("Current Temperature (F) " + response.main.temp + "\xB0");
+        $(".desc").text("Description:  " + response.weather[0].description);
+        $(".humidity").text("Humidity: " + response.main.humidity + "\xB0");
+        $(".wind").text("Wind Speed: " + response.wind.speed + " m/s ");
+        $(".max").text("Max: " + response.main.temp_max + "\xB0");
+        $(".min").text("Min: " + response.main.temp_min + "\xB0");
+
+        // Log the data in the console as well
+        console.log("Wind Speed: " + response.wind.speed);
+        console.log("Humidity: " + response.main.humidity);
+        console.log("Current Temperature (F): " + response.main.temp);
+        console.log("Descritption:  " + response.weather[0].description);
+        console.log("Max: " + response.main.temp_max + "\xB0");
+        console.log("Min: " + response.main.temp_min + "\xB0");
     });
 
 // var locations = [
