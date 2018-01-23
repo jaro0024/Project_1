@@ -1,10 +1,10 @@
 
 var locations = [
-    ['Dubai', 24.926976, 55.164529, 5],
-    ['Lauterbrunnen', 46.589938, 7.920474, 4],
-    ['Livingstone', -17.619177, 25.803556, 3],
-    ['Key West', 24.961141, -81.744068, 2],
-    ['Queenstown', -44.953772, 168.645954, 1]
+    ['Dubai', 25.0657005, 55.1712799, 5],
+    ['Lauterbrunnen', 46.5956802, 7.90765, 4],
+    ['Empuriabrava', 42.2469101, 3.12059, 3],
+    ['Key West', 24.5552406, -81.7816315, 2],
+    ['Queenstown', -45.0302315, 168.6627045, 1]
 ];
 
 function initMap() {
@@ -48,9 +48,9 @@ function initMap() {
                     searchLocation = new google.maps.LatLng(locations[4][1], locations[4][2]);
                 } else if (cityName == "Key West") {
                     searchLocation = new google.maps.LatLng(locations[3][1], locations[3][2]);
-                } else if (cityName == "Livingstone") {
+                } else if (cityName == "Empuriabrava") {
                     searchLocation = new google.maps.LatLng(locations[2][1], locations[2][2]);
-                } else if (cityName == "Rio de Janeiro") {
+                } else if (cityName == "Lauterbrunnen") {
                     searchLocation = new google.maps.LatLng(locations[1][1], locations[1][2]);
                 } else if (cityName == "Dubai") {
                     searchLocation = new google.maps.LatLng(locations[0][1], locations[0][2]);
@@ -82,6 +82,7 @@ function initMap() {
                             position: place.geometry.location,
                             icon: iconImage,
                             title: place.name
+                            // hours: place.operating_hours
                         });
                     })
                 });
