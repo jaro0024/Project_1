@@ -7,6 +7,9 @@ var locations = [
     ['Queenstown', -45.0302315, 168.6627045, 1]
 ];
 
+var searchLat;
+var searchLong;
+
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -34,11 +37,13 @@ function initMap() {
             marker.addListener('mouseout', function () {
                 infowindow.close();
             });
+
             // Listener event functtion to display nearby skydiving locations when user cick on city
             google.maps.event.addListener(marker, 'click', (function () {
 
                 var cityName = infowindow.getContent();
                 console.log("City is " + cityName);
+                var searchLocation;
 
                 // Zoom map closer to city
                 map.setZoom(9);
@@ -46,14 +51,24 @@ function initMap() {
 
                 if (cityName == "Queenstown") {
                     searchLocation = new google.maps.LatLng(locations[4][1], locations[4][2]);
+                    searchLat = locations[4][1];
+                    searchLong = locations[4][2];
                 } else if (cityName == "Key West") {
                     searchLocation = new google.maps.LatLng(locations[3][1], locations[3][2]);
+                    searchLat = locations[3][1];
+                    searchLong = locations[3][2];
                 } else if (cityName == "Empuriabrava") {
                     searchLocation = new google.maps.LatLng(locations[2][1], locations[2][2]);
+                    searchLat = locations[2][1];
+                    searchLong = locations[2][2];
                 } else if (cityName == "Lauterbrunnen") {
                     searchLocation = new google.maps.LatLng(locations[1][1], locations[1][2]);
+                    searchLat = locations[1][1];
+                    searchLong = locations[1][2];
                 } else if (cityName == "Dubai") {
                     searchLocation = new google.maps.LatLng(locations[0][1], locations[0][2]);
+                    searchLat = locations[0][1];
+                    searchLong = locations[0][2];
                 }
 
                 //Parameters for our places request
@@ -86,30 +101,28 @@ function initMap() {
                         });
                     })
                 });
+                // Call wetherInfo function to get weather details of city
+                weatherInfo();
             }));
+
         })(i);
     }
 }
 
-$(document)
-    .ready(function () {
-        initMap();
-    });
+// Function to get weather info from city
+function weatherInfo() {
 
-
-/// This is our API key
-var APIKey = "999df4c3925000e8f0fcd5765a05caf2";
-
-// Here we are building the URL we need to query the database
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=24.926976&lon=55.164529&units=imperial&appid=" + APIKey;
-
-// Here we run our AJAX call to the OpenWeatherMap API
-$.ajax({
-    url: queryURL,
-    method: "GET"
-})
-    // We store all of the retrieved data inside of an object called "response"
-    .done(function (response) {
+    /// API key for weather
+    var APIKey = "999df4c3925000e8f0fcd5765a05caf2";
+    // Here we are building the URL we need to query the database
+    // var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=24.926976&lon=55.164529&units=imperial&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + searchLat + "&lon=" + searchLong + "&units=imperial&appid=" + APIKey;
+    console.log("Query url is: " + queryURL);
+    // Here we run our AJAX call to the OpenWeatherMap API and store all of the retrieved data inside of an object called "response"
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).done(function (response) {
 
         // Log the queryURL
         console.log(queryURL);
@@ -118,21 +131,27 @@ $.ajax({
         console.log(response);
 
         // Transfer content to HTML
-        $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-        $(".temp").text("Current Temperature (F) " + response.main.temp + "\xB0");
-        $(".desc").text("Description:  " + response.weather[0].description);
+        $(".city").html("<strong>" + response.name + " Weather Details:</strong>");
+        $(".temp").text("Current Temperature(F): " + response.main.temp + "\xB0");
+        $(".desc").text("Weather Descritption:  " + response.weather[0].description);
         $(".humidity").text("Humidity: " + response.main.humidity + "\xB0");
         $(".wind").text("Wind Speed: " + response.wind.speed + " m/s ");
-        $(".max").text("Max: " + response.main.temp_max + "\xB0");
-        $(".min").text("Min: " + response.main.temp_min + "\xB0");
+        $(".max").text("Maximum Temperature(F): " + response.main.temp_max + "\xB0");
+        $(".min").text("Minimum Temperature(F): " + response.main.temp_min + "\xB0");
 
         // Log the data in the console as well
-        console.log("Wind Speed: " + response.wind.speed);
-        console.log("Humidity: " + response.main.humidity);
-        console.log("Current Temperature (F): " + response.main.temp);
-        console.log("Descritption:  " + response.weather[0].description);
-        console.log("Max: " + response.main.temp_max + "\xB0");
-        console.log("Min: " + response.main.temp_min + "\xB0");
+        // console.log("Wind Speed: " + response.wind.speed);
+        // console.log("Humidity: " + response.main.humidity);
+        // console.log("Current Temperature (F): " + response.main.temp);
+        // console.log("Weather Descritption: " + response.weather[0].description);
+        // console.log("Max: " + response.main.temp_max + "\xB0");
+        // console.log("Min: " + response.main.temp_min + "\xB0");
+    });
+}
+
+$(document)
+    .ready(function () {
+        initMap();
     });
 
 // var locations = [
