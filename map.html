@@ -13,6 +13,8 @@
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Gafata|Lemon|Rammetto+One|Salsa" rel="stylesheet">
+
     <!-- Google map API and places library -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CGQ_8bl8ZaJQa5hbPzq14eRiNJKwLC4&libraries=places"></script>
 
@@ -21,29 +23,18 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Dare2Dive</a>git
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
-                <button class="text-right btn btn-sm">Submit</button>
-            </form>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Dare<span class="logo_text">2</span>Dive</a>
+
+    <div class="socialBtn">
+    <form action="http://www.facebook.com">
+    <input class="img" type="image" src="assets/images/fb_icon.png" alt="Submit" height="40px" width="40px">
+    </form>
+    <form action="http://www.twitter.com">
+    <input class="img2" type="image" src="assets/images/twitter_icon.png" alt="Submit" height="40px" width="40px">
+    </form>
+    </div>
+</nav>
 
     <div class="col-lg-12" id="map">
 
@@ -61,16 +52,11 @@
 </body>
 
 <!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <span>
-            <small>
-                <strong>&copy; Copyright 2018</strong>
-            </small>
-        </span>
-    </div>
+<footer class="footer col-sm-12">
+        <div class="container">
+            <p><span class="text-muted">&copy;2018 Spicy Dancing Pansies</span></p>
+        </div>
 </footer>
-
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
