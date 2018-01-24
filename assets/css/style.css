@@ -75,6 +75,12 @@ span.logo_text {
 	color:#E6AC1B;
 }
 
+span.logo_text_two {
+	font-size: 110px;
+	color:#E6AC1B;
+}
+
+
 .btn {
 	margin:0px auto;
 	display: block;
