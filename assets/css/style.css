@@ -54,10 +54,11 @@ p, h1 {
 }
 
 h1 {
-	font-family: 'Lemon', cursive;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 80px;
 	color: #ffffff;
-	text-shadow: 2px 2px 4px #000000;
+	text-shadow: 4px 4px 6px #000000;
+  font-weight: bold;
 }
 
 p {
@@ -120,6 +121,23 @@ span.logo_text {
     bottom: 0;
     min-width: 100%; 
     min-height: 100%;
+}
+
+.btn-group-vertical {
+  position: relative;
+  float: left;
+  margin-left: -280px;
+  margin-top: 200px;
+  background-color: black;
+  z-index: 900;
+  padding: 10px;
+  opacity: 0.5;
+
+}
+
+img {
+  z-index: 900;
+  padding: 5px;
 }
 
 p span {
