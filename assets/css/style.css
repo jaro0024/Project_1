@@ -123,21 +123,14 @@ span.logo_text {
     min-height: 100%;
 }
 
-.btn-group-vertical {
+.socialBtn {
   position: relative;
-  float: left;
-  margin-left: -280px;
-  margin-top: 200px;
-  background-color: black;
-  z-index: 900;
-  padding: 10px;
-  opacity: 0.5;
-
+  margin-left: 1400px;
 }
 
 img {
   z-index: 900;
-  padding: 5px;
+  padding: 8px;
 }
 
 p span {
