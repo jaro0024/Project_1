@@ -124,11 +124,23 @@ span.logo_text {
 }
 
 .socialBtn {
-  position: relative;
-  margin-left: 1400px;
+  position: absolute;
+  margin-left: 1570px;
 }
 
-img {
+.img {
+    position: relative;
+}
+.img2 {
+    position: relative;
+    float: right;
+}
+
+form {
+    display: inline;
+}
+
+input {
   z-index: 900;
   padding: 8px;
 }
