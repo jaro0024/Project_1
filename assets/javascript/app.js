@@ -57,6 +57,7 @@ function initMap() {
 
             // Listener event functtion to display nearby skydiving locations when user cick on city
             google.maps.event.addListener(marker, 'click', (function () {
+                $(".btn").show();
 
                 var cityName = infowindow.getContent();
                 console.log("City is " + cityName);
@@ -118,6 +119,10 @@ function initMap() {
                 });
                 // Call wetherInfo function to get weather details of city when user click on city icon
                 weatherInfo();
+                //call weatherForrecast function to get 5 day forecast when user clicks on city
+                //$(".btn").on("click", function(weatherForecast));
+                $(".btn").on("click",weatherForecast());
+                // weatherForecast();
             }));
 
         })(i);
@@ -132,6 +137,7 @@ function weatherInfo() {
     // Here we are building the URL we need to query the database
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + searchLat + "&lon=" + searchLong + "&units=imperial&appid=" + APIKey;
     console.log("Query url is: " + queryURL);
+
     // Here we run our AJAX call to the OpenWeatherMap API and store all of the retrieved data inside of an object called "response"
     $.ajax({
         url: queryURL,
@@ -163,7 +169,154 @@ function weatherInfo() {
     });
 }
 
+// Function to get weather info from city
+function weatherForecast() {
+
+    /// API key for weather
+    var APIKey = "999df4c3925000e8f0fcd5765a05caf2";
+
+var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + searchLat + "&lon=" + searchLong + "&units=imperial&appid=" + APIKey;
+console.log(forecastURL);
+$.ajax({
+        url: forecastURL,
+        method: "GET"
+    }).done(function (response) {
+
+        // Log the queryURL
+        //console.log(queryURL);
+
+        // Log the resulting object
+        console.log(response);
+
+        $("#train-table > tbody").append(
+         "<tr><td>" + response.list[1].dt_txt +
+         "</td><td>" + response.list[1].main.temp  + "\xB0" + 
+         //"</td><td" + response.list[1].weather.icon +
+
+                 
+        
+         "</tr><td>" + response.list[2].dt_txt +
+         "</td><td>" + response.list[2].main.temp + "\xB0"  +
+
+         
+
+         "</tr><td>" + response.list[3].dt_txt +
+         "</td><td>" + response.list[3].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[4].dt_txt +
+         "</td><td>" + response.list[4].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[5].dt_txt +
+         "</td><td>" + response.list[5].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[6].dt_txt +
+         "</td><td>" + response.list[6].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[7].dt_txt +
+         "</td><td>" + response.list[7].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[8].dt_txt +
+         "</td><td>" + response.list[8].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[9].dt_txt +
+         "</td><td>" + response.list[9].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[10].dt_txt +
+         "</td><td>" + response.list[10].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[11].dt_txt +
+         "</td><td>" + response.list[11].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[12].dt_txt +
+         "</td><td>" + response.list[12].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[13].dt_txt +
+         "</td><td>" + response.list[13].main.temp + "\xB0"  +
+
+         "</tr><td>" + response.list[14].dt_txt +
+         "</td><td>" + response.list[14].main.temp + "\xB0"  +
+         
+        "</tr><td>" + response.list[15].dt_txt +
+         "</td><td>" + response.list[15].main.temp + "\xB0"  +
+
+        "</tr><td>" + response.list[16].dt_txt +
+         "</td><td>" + response.list[16].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[17].dt_txt +
+         "</td><td>" + response.list[17].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[18].dt_txt +
+         "</td><td>" + response.list[18].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[19].dt_txt +
+         "</td><td>" + response.list[19].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[20].dt_txt +
+         "</td><td>" + response.list[20].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[21].dt_txt +
+         "</td><td>" + response.list[21].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[22].dt_txt +
+         "</td><td>" + response.list[22].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[23].dt_txt +
+         "</td><td>" + response.list[23].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[24].dt_txt +
+         "</td><td>" + response.list[24].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[25].dt_txt +
+         "</td><td>" + response.list[25].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[26].dt_txt +
+         "</td><td>" + response.list[26].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[27].dt_txt +
+         "</td><td>" + response.list[27].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[28].dt_txt +
+         "</td><td>" + response.list[28].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[29].dt_txt +
+         "</td><td>" + response.list[29].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[30].dt_txt +
+         "</td><td>" + response.list[30].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[31].dt_txt +
+         "</td><td>" + response.list[31].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[32].dt_txt +
+         "</td><td>" + response.list[32].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[33].dt_txt +
+         "</td><td>" + response.list[33].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[34].dt_txt +
+         "</td><td>" + response.list[34].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[35].dt_txt +
+         "</td><td>" + response.list[35].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[36].dt_txt +
+         "</td><td>" + response.list[36].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[37].dt_txt +
+         "</td><td>" + response.list[37].main.temp + "\xB0"  +
+
+          "</tr><td>" + response.list[38].dt_txt +
+         "</td><td>" + response.list[38].main.temp + "\xB0"  +
+
+       //   "</tr><td>" + response.list[39].dt_txt +
+         //"</td><td>" + response.list[39].main.temp + "\xB0"  +
+
+         "</td></tr>"); 
+    });
+}
+
 $(document)
     .ready(function () {
+        $(".btn").hide();
         initMap();
     });
