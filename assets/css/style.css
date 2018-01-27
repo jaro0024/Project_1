@@ -33,18 +33,19 @@ span.logo_text_two {
 	margin-top: 200px;
     text-align: center;
 	letter-spacing: 1px;
-	z-index: 100;
+	
 }
 
 /* Styling for Diver*/
-img.diver {
+#diver {
 	position: absolute;
+	margin-top: -60px;
+    margin-left: 150px;
 	width: 200px;
 	height: 200px;
-	margin-left: 20px;
-	margin-top: -40px;
-	z-index: 900;	
+	z-index: 100;	
 }
+
 
 a:link {
     text-decoration: none;
@@ -69,7 +70,7 @@ a:hover {
 p, h1 {
 	position: relative;
 	text-align: center;
-	z-index: 900;
+	z-index: 100;
 }
 /* Heading */
 h1 {
@@ -119,6 +120,7 @@ p h1 .special {
 /* Code for video background*/
  .poster {
     display: block !important;
+	 z-index: -1
 }
 
  .poster img {
@@ -136,6 +138,7 @@ p h1 .special {
     bottom: 0;
     min-width: 100%; 
     min-height: 100%;
+	z-index: 0;
 }
 
 p span {
@@ -163,7 +166,3 @@ body {
     background-color: #1F1F1F;
     text-align: center;
 }
-
-
-
-
