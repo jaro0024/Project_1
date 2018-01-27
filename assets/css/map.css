@@ -26,7 +26,7 @@ span.logo_text {
 
 .socialBtn {
   position: absolute;
-  margin-left: 1350px;
+  margin-left: 1000px;
   margin-top: 10px;
 }
 
@@ -36,7 +36,7 @@ span.logo_text {
 
 .img2 {
     position: relative;
-    float: right;
+
 }
 
 .img:hover {
