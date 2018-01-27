@@ -122,6 +122,46 @@ span.logo_text {
     min-height: 100%;
 }
 
+.socialBtn {
+  position: absolute;
+  margin-left: 1350px;
+  margin-top: 10px;
+}
+
+.img {
+    position: relative;
+}
+
+.img2 {
+    position: relative;
+
+}
+
+.img:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.img2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.img3 {
+    position: relative;
+}
+
+.img3:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+form {
+    display: inline;
+}
+
+input {
+  z-index: 900;
+  padding: 8px;
+}
+
 p span {
 	font-size: 16px;
 }
