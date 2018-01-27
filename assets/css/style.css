@@ -1,37 +1,56 @@
 @charset "UTF-8";
 /* CSS Document */
 
+
+/* z index*/
 nav, h1 {
 	z-index: 100;
 }
 
+/* Styling for logo / navebar*/
+.navbar-brand {
+	margin-top:10px;
+	font-family: 'Salsa', cursive;
+	font-size: 40px;
+	letter-spacing: 1px;
+	margin-left: 15px;
+}
+
+span.logo_text {
+	font-size: 50px;
+	color:#E6AC1B;
+}
+
+span.logo_text_two {
+	font-size: 110px;
+	color:#E6AC1B;
+}
+
+
+/* Styling for logo */
 .header {
 	position: relative;
-	margin-top: 150px;
+	margin-top: 200px;
     text-align: center;
 	letter-spacing: 1px;
 	z-index: 100;
 }
 
-.navbar-brand {
-	margin-top:10px;
-	font-family: 'Salsa', cursive;
-	letter-spacing: 1px;
-	margin-left: 15px;
-}
-
+/* Styling for Diver*/
 img.diver {
 	position: absolute;
-	width: 125px;
-	height: 125px;
+	width: 200px;
+	height: 200px;
 	margin-left: 20px;
-	margin-top: -20px;
+	margin-top: -40px;
 	z-index: 900;	
 }
 
 a:link {
     text-decoration: none;
 }
+
+/* Enter bitton */
 
 a:link {
     color: #ffffff;
@@ -46,20 +65,20 @@ a:visited {
 a:hover {
     color: #ffffff;
 }
-
+/* Titles layer */
 p, h1 {
 	position: relative;
 	text-align: center;
 	z-index: 900;
 }
-
+/* Heading */
 h1 {
 	font-family: 'Lemon', cursive;
 	font-size: 80px;
 	color: #ffffff;
 	text-shadow: 2px 2px 4px #000000;
 }
-
+/* sub title */
 p {
 	font-family: 'Gafata', sans-serif;
 	font-size: 40px;
@@ -70,17 +89,8 @@ p h1 .special {
 	text-align: center;
 }
 
-span.logo_text {
-	font-size: 30px;
-	color:#E6AC1B;
-}
 
-span.logo_text_two {
-	font-size: 110px;
-	color:#E6AC1B;
-}
-
-
+/* Enter button*/
 .btn {
 	margin:0px auto;
 	display: block;
@@ -106,7 +116,7 @@ span.logo_text_two {
     background-color: #30578C;
 }
 
-
+/* Code for video background*/
  .poster {
     display: block !important;
 }
@@ -131,6 +141,7 @@ span.logo_text_two {
 p span {
 	font-size: 16px;
 }
+
 
 /* footer */
 html {

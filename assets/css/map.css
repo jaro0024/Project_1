@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html, body
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 html {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -7,24 +18,141 @@ html {
 html, body {
     height: 100%;
 }
+/* Map view*/
 
 #map {
-    height: 70%;
+	position: relative;
+	margin-top: 0px;
+	float: right;
+	width:100%;
+	height:700px;
+	top: 0;
+	bottom: 0;
+}
+
+/* second forcast 5-day*/
+#forcast_two {
+	position: absolute;
+	margin: 0 auto;
+	margin: -150px 0 0 800px;
+	z-index: 105;
+	}
+
+/* Styling for go back button*/
+span.golink {
+	margin-top: 10px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 20px;
+	letter-spacing: 1px;
+	margin-left: 15px;
+	color:#E6AC1B;
+}
+
+/*slide close button*/
+span.open_tab {
+	margin-top: -20px;
+	margin-left: 20px;
+	float: left;
+	z-index: 100;
+}
+.closebtn {
+	margin-top: 150px;
+	margin-bottom: 50px;
+}
+
+#main{
+	z-index: 900;
+}
+
+/* Populated Weather div's */
+#weather_details {
+	position: absolute;
+	width: 350;
+	margin-top: 170px;
+	margin-left: 30px;
+}
+
+div .city h1 {
+	font-size: 20px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	color:#ffffff;
+	margin-bottom: 40px;	
+}
+div .temp  {
+	font-size: 20px;
+	color:#234879;	
+}
+div .desc {
+	font-size: 20px;
+	color:#234879;	
+}
+div .humidity {
+	font-size: 20px;
+	color:#234879;	
+}
+div .wind {
+	font-size: 20px;
+	color:#234879;
+}
+div .max {
+	font-size: 20px;
+	color:#234879;	
+}
+
+div .min {
+	font-size: 20px;
+	color:#234879;
+}
+
+/* footer */
+.footer {
+	z-index: 3;
 }
 
 
 
 
-
-
-.footer {
+/* slider */
+.sidenav {
+    height: 100%;
+    width: 0;
     position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    line-height: 35px; 
-    /* color:#f8f7fd;
-    background-color: #0712a7;
-    border-top: 3px solid #03045e; */
-    text-align: center;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #E6AC1B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
